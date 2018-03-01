@@ -1,4 +1,4 @@
 folder("keymux") {
-  folder("serverless_utils") {
-  }
+}
+folder("keymux/serverless_utils") {
 }
