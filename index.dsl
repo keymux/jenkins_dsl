@@ -1,4 +1,14 @@
-folder("keymux") {
+def org = "keymux"
+
+def serverless_utils = "serverless_utils"
+
+folder(org) {
 }
-folder("keymux/serverless_utils") {
+
+def projects = [ serverless_utils ];
+
+for (p in projects) {
+  def proj = org + "/" + p
+  folder(proj) {
+  }
 }
