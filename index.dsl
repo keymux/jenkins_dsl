@@ -21,6 +21,8 @@ for (p in projects) {
         scm {
           git {
             remote {
+              credentials('jenkins')
+              name('origin')
               github(proj)
               refspec('+refs/heads/*:refs/remotes/origin/* +refs/pull/${ghprbPullId}/*:refs/remotes/origin/pr/${ghprbPullId}/*')
             }
