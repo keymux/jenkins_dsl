@@ -11,4 +11,9 @@ for (p in projects) {
   def proj = org + "/" + p
   folder(proj) {
   }
+
+  // Pull Request Builder Job
+  def prbjName = proj + "/" + "BuildJenkinsfile"
+
+  def prbh = pipelineJob(prbjName)
 }
