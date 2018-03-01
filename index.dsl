@@ -15,7 +15,7 @@ for (p in projects) {
   // Pull Request Builder Job
   def prbjName = proj + "/" + "BuildJenkinsfile"
 
-  def prbh = pipelineJob(prbjName)
-
-  prbh.RemoteContext.github(proj)
+  pipelineJob(prbjName) {
+    githubProject("https://github.com/" + proj)
+  }
 }
