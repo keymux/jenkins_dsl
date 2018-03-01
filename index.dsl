@@ -16,4 +16,6 @@ for (p in projects) {
   def prbjName = proj + "/" + "BuildJenkinsfile"
 
   def prbh = pipelineJob(prbjName)
+
+  prbh.github(proj)
 }
