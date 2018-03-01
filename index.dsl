@@ -38,6 +38,7 @@ for (p in projects) {
     }
     triggers {
       githubPullRequest {
+        admin('hibes')
         useGitHubHooks()
         triggerPhrase('jenkins build')
         cron('* * * * *')
