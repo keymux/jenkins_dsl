@@ -38,9 +38,7 @@ for (p in projects) {
         cron('* * * * *')
         userWhitelist('hibes')
         orgWhitelist('keymux')
-        triggerSetup {
-          commentFile('/fake/path')
-        }
+        // CommentFile must be added manually
       }
     }
   }
