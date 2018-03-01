@@ -1,4 +1,4 @@
-jobFolder("keymux") {
-  jobFolder("serverless_utils") {
+folder("keymux") {
+  folder("serverless_utils") {
   }
 }
