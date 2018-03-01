@@ -26,6 +26,7 @@ for (p in projects) {
       }
     }
     properties {
+      parameters([string(defaultValue: "master", description: "", name: "sha1", trim: false)])
       githubProjectUrl("https://github.com/" + proj)
     }
   }
