@@ -21,14 +21,14 @@ for (p in projects) {
         stringParam("sha1", "master", "The commit hash to build")
       }
       githubProjectUrl("https://github.com/" + proj)
-    }
-    scm {
-      git {
-        remote {
-          github(proj)
-          refspec("+refs/pull/*:refs/remotes/origin/pr/*")
+      scm {
+        git {
+          remote {
+            github(proj)
+            refspec("+refs/pull/*:refs/remotes/origin/pr/*")
+          }
+          branch("${sha1}")
         }
-        branch("${sha1}")
       }
     }
   }
