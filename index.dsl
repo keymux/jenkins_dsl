@@ -22,7 +22,7 @@ for (p in projects) {
           git {
             remote {
               github(proj)
-              refspec('+refs/pull/*:refs/remotes/origin/pr/*')
+              refspec('+refs/heads/*:refs/remotes/origin/* +refs/pull/${ghprbPullId}/*:refs/remotes/origin/pr/${ghprbPullId}/*')
             }
             branch('${sha1}')
           }
