@@ -16,20 +16,25 @@ for (p in projects) {
   def prbjName = proj + '/' + 'BuildJenkinsfile'
 
   pipelineJob(prbjName) {
+    definition {
+      cpsScm {
+        scm {
+          git {
+            remote {
+              github(proj)
+              refspec('+refs/pull/*:refs/remotes/origin/pr/*')
+            }
+            branch('${sha1}')
+          }
+        }
+        scriptPath("Jenkinsfile")
+      }
+    }
     properties {
       parameters {
         stringParam('sha1', 'master', 'The commit hash to build')
       }
       githubProjectUrl('https://github.com/' + proj)
-    }
-    scm {
-      git {
-        remote {
-          github(proj)
-          refspec('+refs/pull/*:refs/remotes/origin/pr/*')
-        }
-        branch('${sha1}')
-      }
     }
     triggers {
       githubPullRequest {
