@@ -17,7 +17,9 @@ for (p in projects) {
 
   pipelineJob(prbjName) {
     properties {
-      parameters([defaultValue: "master", description: "", name: "sha1", trim: false].toString())
+      parameters {
+        stringParam("sha1", "master", "The commit hash to build")
+      }
       githubProjectUrl("https://github.com/" + proj)
     }
     scm {
