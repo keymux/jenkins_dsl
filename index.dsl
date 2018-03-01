@@ -16,6 +16,8 @@ for (p in projects) {
   def prbjName = proj + "/" + "BuildJenkinsfile"
 
   pipelineJob(prbjName) {
-    githubProjectUrl("https://github.com/" + proj)
+    properties {
+      githubProjectUrl("https://github.com/" + proj)
+    }
   }
 }
