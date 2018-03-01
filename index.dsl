@@ -17,5 +17,7 @@ for (p in projects) {
 
   def prbh = pipelineJob(prbjName)
 
-  prbh.github(proj)
+  with prbh {
+    github(proj)
+  }
 }
