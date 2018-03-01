@@ -17,9 +17,5 @@ for (p in projects) {
 
   def prbh = pipelineJob(prbjName)
 
-  with prbh {
-    with RemoteContext {
-      github(proj)
-    }
-  }
+  prbh.RemoteContext.github(proj)
 }
