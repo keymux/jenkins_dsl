@@ -16,6 +16,10 @@ for (p in projects) {
   def prbjName = proj + "/" + "BuildJenkinsfile"
 
   pipelineJob(prbjName) {
+    properties {
+      parameters([string(defaultValue: "master", description: "", name: "sha1", trim: false)])
+      githubProjectUrl("https://github.com/" + proj)
+    }
     scm {
       git {
         remote {
@@ -24,10 +28,6 @@ for (p in projects) {
         }
         branch("${sha1}")
       }
-    }
-    properties {
-      parameters([string(defaultValue: "master", description: "", name: "sha1", trim: false)])
-      githubProjectUrl("https://github.com/" + proj)
     }
   }
 }
