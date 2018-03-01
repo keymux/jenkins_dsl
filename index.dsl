@@ -16,6 +16,15 @@ for (p in projects) {
   def prbjName = proj + "/" + "BuildJenkinsfile"
 
   pipelineJob(prbjName) {
+    scm {
+      git {
+        remote {
+          github(proj)
+          refspec("+refs/pull/*:refs/remotes/origin/pr/*")
+        }
+        branch("${sha1}")
+      }
+    }
     properties {
       githubProjectUrl("https://github.com/" + proj)
     }
