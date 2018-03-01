@@ -31,5 +31,14 @@ for (p in projects) {
         branch('${sha1}')
       }
     }
+    triggers {
+      githubPullRequest {
+        useGitHubHooks()
+        triggerPhrase('jenkins build')
+        cron('* * * * *')
+        userWhitelist('hibes')
+        orgWhitelist('keymux')
+      }
+    }
   }
 }
