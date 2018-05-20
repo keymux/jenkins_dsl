@@ -48,7 +48,9 @@ for (p in projects) {
         userWhitelist('hibes')
         orgWhitelist('keymux')
         // CommentFile must be added manually
-        commentFilePath("reports/githubCommentFile")
+        commentFilePath {
+          commentFilePath("reports/githubCommentFile")
+        }
       }
     }
   }
