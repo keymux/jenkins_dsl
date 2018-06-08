@@ -6,7 +6,7 @@ def dev_utils = 'dev_utils'
 folder(org) {
 }
 
-def projects = [ serverless_utils, dev_utils ];
+def projects = [ serverless_utils, dev_utils, promisr ];
 
 for (p in projects) {
   def proj = org + '/' + p
