@@ -49,12 +49,6 @@ for (p in projects) {
         cron('* * * * *')
         userWhitelist('hibes')
         orgWhitelist('keymux')
-        // CommentFile must be added manually
-        extensions {
-          commentFilePath {
-            commentFilePath("reports/githubCommentFile")
-          }
-        }
       }
     }
   }
