@@ -1,13 +1,14 @@
 def org = 'keymux'
 
-def serverless_utils = 'serverless_utils'
-def dev_utils = 'dev_utils'
-def promisr = 'promisr'
-
 folder(org) {
 }
 
-def projects = [ serverless_utils, dev_utils, promisr ];
+def projects = [
+  "serverless_utils",
+  "dev_utils",
+  "promisr",
+  "mochawesome_to_markdown"
+];
 
 for (p in projects) {
   def proj = org + '/' + p
