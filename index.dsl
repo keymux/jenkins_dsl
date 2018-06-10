@@ -44,6 +44,7 @@ for (p in projects) {
     }
     triggers {
       githubPullRequest {
+        quietPeriod(0)
         admin('hibes')
         useGitHubHooks()
         triggerPhrase('jenkins build')
