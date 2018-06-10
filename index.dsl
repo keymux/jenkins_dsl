@@ -4,10 +4,11 @@ folder(org) {
 }
 
 def projects = [
-  "serverless_utils",
   "dev_utils",
+  "docker-ubuntu-nvm-yarn",
+  "mochawesome_to_markdown",
   "promisr",
-  "mochawesome_to_markdown"
+  "serverless_utils"
 ];
 
 for (p in projects) {
